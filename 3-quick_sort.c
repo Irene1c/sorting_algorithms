@@ -43,11 +43,13 @@ int divide(int *array, size_t size, int first, int last)
 			index++;
 			/*swap element at i with larger at index*/
 			swap(&array[index], &array[i]);
-			print_array(array, size);
+			if (index != i)
+				print_array(array, size);
 		}
 	}
 	swap(&array[index + 1], &array[last]);
-	print_array(array, size);
+	if (index + 1 != i)
+		print_array(array, size);
 	/*return point of partition*/
 	return (index + 1);
 }
